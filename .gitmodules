@@ -1,3 +1,6 @@
 [submodule "libgsf"]
 	path = libgsf
 	url = git@github.com:GNOME/libgsf.git
+[submodule "libpst"]
+	path = libpst
+	url = git@github.com:pst-format/libpst.git
