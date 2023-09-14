@@ -1,8 +1,7 @@
 [requires]
 zlib/1.2.13
-glib/2.78.0
 libxml2/2.11.4
-gobject-introspection/1.72.0
+glib/2.78.0
 
 [generators]
 cmake

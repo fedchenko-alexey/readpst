@@ -113,7 +113,7 @@
 #define HAVE_FWPRINTF 1
 
 /* Define to 1 if you have the <gd.h> header file. */
-#define HAVE_GD_H 1
+// #define HAVE_GD_H 1
 
 /* Define to 1 if you have the `getcwd' function. */
 #define HAVE_GETCWD 1
