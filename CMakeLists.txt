@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 set(PROJECT_NAME readpst)
 project(${PROJECT_NAME} VERSION 0.6.76 LANGUAGES CXX C)
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
 file(GLOB_RECURSE gsfsources
   ${CMAKE_CURRENT_SOURCE_DIR}/libgsf/gsf/gsf-utils.c   
   ${CMAKE_CURRENT_SOURCE_DIR}/libgsf/gsf/gsf-priv.c    
@@ -56,7 +59,7 @@ add_library(gsf STATIC ${gsfsources} ${gsfheaders})
 target_include_directories(gsf PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libgsf)
 target_include_directories(gsf PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libgsf/gsf)
 set_target_properties(gsf PROPERTIES COMPILE_DEFINITIONS GSFLOCALEDIR=\"${CMAKE_CURRENT_SOURCE_DIR}/libgsf/share/locale\") 
-target_link_libraries(gsf glib)
+target_link_libraries(gsf ${CONAN_LIBS})
 
 file(GLOB_RECURSE sources
   ${CMAKE_CURRENT_SOURCE_DIR}/libpst/src/libpst.c 
